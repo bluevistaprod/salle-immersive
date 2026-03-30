@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
 import { useState } from "react";
+import Navigation from "@/components/Navigation";
 
 /**
  * DESIGN PHILOSOPHY: Cinematic Immersion
@@ -48,33 +49,10 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="container flex items-center justify-between h-16">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-background" />
-            </div>
-            <span className="font-bold text-lg">Bluevista Immersive</span>
-          </div>
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#experiences" className="text-sm hover:text-primary transition-colors">
-              Expériences
-            </a>
-            <a href="#technology" className="text-sm hover:text-primary transition-colors">
-              Technologie
-            </a>
-            <a href="#contact" className="text-sm hover:text-primary transition-colors">
-              Contact
-            </a>
-            <Button className="bg-primary text-background hover:bg-primary/90">
-              Demander une démo
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Hero Section */}
-      <section className="hero-section pt-16">
+      <section className="hero-section pt-16 mt-16">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/hero-immersive-landscape-mRNbgdRjabNQ6GXWYo9RFd.webp"
           alt="Salle immersive luxe"
@@ -91,18 +69,22 @@ export default function Home() {
               Créez des expériences sensorielles inoubliables avec nos salles immersives 360°
             </p>
             <div className="flex gap-4 justify-center pt-4">
-              <Button size="lg" className="bg-primary text-background hover:bg-primary/90 glow">
-                <Play className="w-4 h-4 mr-2" />
-                Voir la démo
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white/10"
-              >
-                En savoir plus
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+            <Button size="lg" className="bg-primary text-background hover:bg-primary/90 glow">
+              <a href="/booking" className="flex items-center gap-2 no-underline">
+                <Play className="w-4 h-4" />
+                Demander un devis
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white/10"
+            >
+              <a href="/experiences" className="flex items-center gap-2 no-underline">
+                Voir nos expériences
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
             </div>
           </div>
         </div>
@@ -119,7 +101,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8" id="experiences">
             {experiences.map((exp, idx) => (
               <div
                 key={exp.id}
@@ -162,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Technology Section */}
-      <section id="technology" className="py-24 bg-card border-t border-border">
+      <section className="py-24 bg-card border-t border-border">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             {/* Left: Image */}
@@ -221,10 +203,12 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button className="bg-primary text-background hover:bg-primary/90 mt-6">
-                Demander une démo technique
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+            <Button className="bg-primary text-background hover:bg-primary/90 mt-6">
+              <a href="/booking" className="flex items-center gap-2 no-underline">
+                Demander un devis
+                <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
             </div>
           </div>
         </div>
@@ -271,7 +255,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-24 bg-card border-t border-border">
+      <section className="py-24 bg-card border-t border-border">
         <div className="container text-center animate-slide-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             Prêt à Créer l'Immersion ?
