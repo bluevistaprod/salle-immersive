@@ -1,197 +1,94 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight, Sparkles, Zap, Heart, Brain, Target, Eye, Lightbulb, Users, Clapperboard, Palette, Layers } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 
 /**
- * DESIGN PHILOSOPHY: Cinematic Immersion - B2B Premium
- * Messaging : Résultats business et expérience client
- * Pas de technologie, mais des solutions qui créent de la valeur
+ * DESIGN PHILOSOPHY: Premium Immersive Experience
+ * Emotion > Explanation
+ * "Je veux vivre ça" au lieu de "Je comprends comment ça fonctionne"
  */
 
 export default function Home() {
   const [expandedFaq, setExpandedFaq] = useState<string | null>(null);
 
-  const whyImmersion = [
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Captiver l'Attention",
-      description: "L'immersion crée un environnement sans distractions où votre message devient le centre de l'univers du visiteur.",
-    },
-    {
-      icon: <Heart className="w-8 h-8" />,
-      title: "Générer de l'Émotion",
-      description: "Les expériences sensorielles créent des connexions émotionnelles durables avec votre audience.",
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Renforcer la Mémorisation",
-      description: "Les souvenirs créés par l'immersion sont 5x plus mémorables qu'une présentation classique.",
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Augmenter l'Engagement",
-      description: "Les visiteurs deviennent acteurs de l'expérience, augmentant leur implication et leur satisfaction.",
-    },
-    {
-      icon: <Lightbulb className="w-8 h-8" />,
-      title: "Créer un Effet Différenciant",
-      description: "Se démarquer de la concurrence en offrant une expérience unique et inoubliable.",
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Renforcer la Fidélité",
-      description: "Les expériences mémorables transforment les visiteurs en ambassadeurs de votre marque.",
-    },
-  ];
-
+  // Applications avec images spectaculaires
   const applications = [
     {
       title: "Hôtellerie & Luxe",
-      problem: "Différencier votre établissement dans un marché saturé",
-      benefit: "Augmenter la satisfaction client et les tarifs moyens",
-      example: "Le Cardinal Hotel - Voyages immersifs en chambre",
-      icon: "🏨",
+      subtitle: "Expériences immersives premium",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-hospitality-immersive-4NF74c9Ni6J654HCJ7d9pd.webp",
+      cta: "Découvrir",
     },
     {
       title: "Musées & Culture",
-      problem: "Rendre les collections plus engageantes et accessibles",
-      benefit: "Augmenter les visiteurs et les revenus annexes",
-      example: "Musées - Contextualisations immersives des œuvres",
-      icon: "🎨",
+      subtitle: "Patrimoine immersif",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-museums-immersive-BJW7KqtYDKrJiS9rkigD6Z.webp",
+      cta: "Découvrir",
     },
     {
       title: "Showrooms",
-      problem: "Transformer les visites en expériences mémorables",
-      benefit: "Augmenter les taux de conversion et les ventes",
-      example: "Showrooms automobiles - Essais immersifs",
-      icon: "🚗",
+      subtitle: "Lancement produit spectaculaire",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-showroom-immersive-4jQLNHGnWUvSCLaogTTcKd.webp",
+      cta: "Découvrir",
     },
     {
       title: "Événementiel",
-      problem: "Créer des moments spectaculaires et inoubliables",
-      benefit: "Générer du buzz et de la viralité",
-      example: "WorldSkills - Spectacle immersif événementiel",
-      icon: "🎭",
+      subtitle: "Moments spectaculaires",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-events-immersive-AT7xFuHaxfAyjryc2E9Zfs.webp",
+      cta: "Découvrir",
     },
     {
-      title: "Formation & Éducation",
-      problem: "Rendre la formation plus engageante et efficace",
-      benefit: "Augmenter la rétention des connaissances",
-      example: "Formations immersives - Apprentissage par l'expérience",
-      icon: "📚",
+      title: "Bien-être",
+      subtitle: "Sanctuaires immersifs",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-wellness-immersive-hXg8rCAW6deqAFhZWBD9vr.webp",
+      cta: "Découvrir",
     },
     {
-      title: "Bien-être & Santé",
-      problem: "Offrir des expériences de relaxation premium",
-      benefit: "Augmenter la satisfaction et la fidélité",
-      example: "MyGinger - Studio de yoga immersif",
-      icon: "🧘",
+      title: "Restauration",
+      subtitle: "Dîners spectaculaires",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-retail-immersive-eQ9cWREryk254eSxVTWPPe.webp",
+      cta: "Découvrir",
     },
     {
-      title: "Retail & Commerce",
-      problem: "Créer une expérience d'achat différenciante",
-      benefit: "Augmenter le temps passé en magasin et les achats",
-      example: "Restaurants immersifs - Dîners spectaculaires",
-      icon: "🛍️",
+      title: "Corporate",
+      subtitle: "Séminaires immersifs",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-corporate-immersive-eW5WBYLc68TY8fRi5EZ49T.webp",
+      cta: "Découvrir",
     },
     {
-      title: "Corporate & Séminaires",
-      problem: "Engager les collaborateurs et renforcer la culture",
-      benefit: "Améliorer la rétention des messages clés",
-      example: "Séminaires immersifs - Team building mémorable",
-      icon: "🏢",
+      title: "Éducation",
+      subtitle: "Apprentissage immersif",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/sector-education-immersive-3fv7smzgvQFxCHZBNA2cDg.webp",
+      cta: "Découvrir",
     },
+  ];
+
+  const whyImmersion = [
+    { title: "Captiver", description: "L'attention sans distractions" },
+    { title: "Émouvoir", description: "Créer des connexions durables" },
+    { title: "Mémoriser", description: "5x plus mémorable" },
+    { title: "Engager", description: "Transformer les visiteurs en acteurs" },
+    { title: "Différencier", description: "Se démarquer de la concurrence" },
+    { title: "Fidéliser", description: "Créer des ambassadeurs" },
   ];
 
   const approach = [
-    {
-      step: "1",
-      title: "Analyse du lieu et des objectifs",
-      description: "Nous comprenons votre espace, vos contraintes et vos ambitions pour concevoir la solution idéale.",
-    },
-    {
-      step: "2",
-      title: "Conception de l'expérience",
-      description: "Nous créons le scénario immersif qui captivera vos visiteurs et atteindra vos objectifs.",
-    },
-    {
-      step: "3",
-      title: "Création des contenus immersifs",
-      description: "Nous produisons les vidéos, animations 3D et contenus interactifs qui font la magie.",
-    },
-    {
-      step: "4",
-      title: "Installation et intégration",
-      description: "Déploiement technique complet et intégration transparente dans votre espace.",
-    },
-    {
-      step: "5",
-      title: "Exploitation et accompagnement",
-      description: "Support continu, mises à jour de contenu et optimisation de l'expérience.",
-    },
+    { step: "1", title: "Analyse", description: "du lieu et des objectifs" },
+    { step: "2", title: "Conception", description: "de l'expérience" },
+    { step: "3", title: "Création", description: "des contenus immersifs" },
+    { step: "4", title: "Installation", description: "et intégration" },
+    { step: "5", title: "Exploitation", description: "et accompagnement" },
   ];
 
   const contentCapabilities = [
-    {
-      icon: <Clapperboard className="w-8 h-8" />,
-      title: "Captation Vidéo",
-      description: "Tournages professionnels en 360°, drone et cinématographie haute définition.",
-    },
-    {
-      icon: <Palette className="w-8 h-8" />,
-      title: "Animation 3D & Motion Design",
-      description: "Créations graphiques sophistiquées et animations fluides.",
-    },
-    {
-      icon: <Layers className="w-8 h-8" />,
-      title: "Storytelling & Scénarisation",
-      description: "Narratifs captivants qui transforment les visiteurs en acteurs.",
-    },
-    {
-      icon: <Zap className="w-8 h-8" />,
-      title: "Expériences Interactives",
-      description: "Contenus réactifs qui s'adaptent au comportement des visiteurs.",
-    },
-  ];
-
-  const comparison = [
-    {
-      feature: "Conception de l'expérience",
-      bluevista: true,
-      competitor: false,
-    },
-    {
-      feature: "Production des contenus",
-      bluevista: true,
-      competitor: false,
-    },
-    {
-      feature: "Intégration technique",
-      bluevista: true,
-      competitor: true,
-    },
-    {
-      feature: "Gestion complète du projet",
-      bluevista: true,
-      competitor: false,
-    },
-    {
-      feature: "Accompagnement stratégique",
-      bluevista: true,
-      competitor: false,
-    },
-    {
-      feature: "Vidéos réelles et drone",
-      bluevista: true,
-      competitor: false,
-    },
-    {
-      feature: "Contenus 3D custom",
-      bluevista: true,
-      competitor: false,
-    },
+    "Captation vidéo 360°",
+    "Drone",
+    "Animation 3D",
+    "Motion design",
+    "Storytelling",
+    "Scénographie",
   ];
 
   const faqItems = [
@@ -225,36 +122,12 @@ export default function Home() {
     },
   ];
 
-  const projects = [
-    {
-      name: "MyGinger - Studio de Yoga Immersif",
-      location: "Paris",
-      problem: "Offrir une expérience de yoga différenciante et premium",
-      benefit: "Augmentation de 45% de la satisfaction client",
-      description: "Studio de yoga immersif avec projections 360° de paysages naturels et son spatial.",
-    },
-    {
-      name: "Le Cardinal Hotel - Voyages Immersifs",
-      location: "Île-de-France",
-      problem: "Créer une expérience unique pour les clients hôtel",
-      benefit: "Augmentation du tarif moyen de 30%",
-      description: "Chambre immersive avec voyages virtuels en 360° à travers la France et le monde.",
-    },
-    {
-      name: "WorldSkills - Spectacle Immersif",
-      location: "Lyon",
-      problem: "Créer un spectacle d'ouverture mémorable",
-      benefit: "Plus de 10 000 spectateurs engagés",
-      description: "Spectacle immersif interactif pour événement international majeur.",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
       {/* Navigation */}
       <Navigation />
 
-      {/* Hero Section - NEW MESSAGING */}
+      {/* Hero Section */}
       <section className="hero-section pt-16 mt-16">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/hero-immersive-landscape-mRNbgdRjabNQ6GXWYo9RFd.webp"
@@ -292,80 +165,70 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Immersion Works - BUSINESS BENEFITS */}
+      {/* Why Immersion Works - VISUAL STORYTELLING */}
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Pourquoi l'immersion fonctionne</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              L'immersion n'est pas une technologie, c'est une stratégie business qui transforme les visiteurs en clients fidèles.
-            </p>
+            <div className="w-20 h-1 bg-primary mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {whyImmersion.map((item, idx) => (
-              <Card
+              <div
                 key={idx}
-                className="bg-card border-border hover:border-primary transition-all animate-slide-up glow"
-                style={{ animationDelay: `${idx * 100}ms` }}
+                className="text-center space-y-3 animate-slide-up"
+                style={{ animationDelay: `${idx * 50}ms` }}
               >
-                <CardHeader>
-                  <div className="text-primary mb-3">{item.icon}</div>
-                  <CardTitle className="text-xl">{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </CardContent>
-              </Card>
+                <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-full border-2 border-primary flex items-center justify-center">
+                    <span className="text-2xl font-bold text-primary">{idx + 1}</span>
+                  </div>
+                </div>
+                <h3 className="font-bold text-lg">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Applications - 8 SECTORS */}
+      {/* Applications - IMMERSIVE CARDS WITH FULL IMAGES */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Applications par secteur</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              L'immersion s'adapte à tous les secteurs. Découvrez comment transformer votre industrie.
-            </p>
+            <div className="w-20 h-1 bg-primary mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {applications.map((app, idx) => (
-              <Card
+              <div
                 key={idx}
-                className="bg-background border-border hover:border-primary transition-all cursor-pointer group animate-slide-up"
+                className="group relative overflow-hidden rounded-lg h-80 cursor-pointer animate-slide-up hover:scale-105 transition-transform duration-500"
                 style={{ animationDelay: `${idx * 50}ms` }}
               >
-                <CardHeader>
-                  <div className="text-4xl mb-3">{app.icon}</div>
-                  <CardTitle className="text-lg group-hover:text-primary transition-colors">{app.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div>
-                    <p className="text-xs font-bold text-primary mb-1">Problématique</p>
-                    <p className="text-sm text-muted-foreground">{app.problem}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-primary mb-1">Bénéfice</p>
-                    <p className="text-sm text-muted-foreground">{app.benefit}</p>
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-primary mb-1">Exemple</p>
-                    <p className="text-sm text-muted-foreground">{app.example}</p>
-                  </div>
-                </CardContent>
-              </Card>
+                <img
+                  src={app.image}
+                  alt={app.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 flex flex-col justify-end p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-2xl font-bold text-white mb-2">{app.title}</h3>
+                  <p className="text-sm text-gray-200 mb-4">{app.subtitle}</p>
+                  <Button size="sm" className="bg-primary text-background hover:bg-primary/90 w-fit">
+                    {app.cta}
+                    <ArrowRight className="w-3 h-3 ml-2" />
+                  </Button>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Approach - 5 STEPS */}
+      {/* Our Approach - VISUAL JOURNEY */}
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
@@ -376,48 +239,46 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="space-y-6 max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-5xl mx-auto">
             {approach.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex gap-6 animate-slide-up"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="flex-shrink-0">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-background font-bold text-lg">
-                    {item.step}
+              <div key={idx} className="flex flex-col items-center gap-4 flex-1 animate-slide-up" style={{ animationDelay: `${idx * 100}ms` }}>
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-background font-bold text-2xl">
+                  {item.step}
+                </div>
+                <div className="text-center">
+                  <h3 className="font-bold text-lg">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                </div>
+                {idx < approach.length - 1 && (
+                  <div className="hidden md:block absolute translate-x-24">
+                    <ArrowRight className="w-6 h-6 text-primary opacity-50" />
                   </div>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground">{item.description}</p>
-                </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Custom Content - WE PRODUCE */}
+      {/* Custom Content - HERO SECTION */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-slide-up">
               <h2 className="text-4xl md:text-5xl font-bold">Contenu sur mesure</h2>
               <div className="w-12 h-1 bg-primary" />
-              <p className="text-lg text-muted-foreground">
+              <p className="text-xl text-muted-foreground font-semibold">
                 La technologie seule ne crée pas l'émotion. Le contenu fait toute la différence.
               </p>
               <p className="text-muted-foreground">
-                Nous ne nous contentons pas d'intégrer des technologies. Nous créons les contenus qui font vivre vos espaces.
+                Bluevista ne se contente pas d'installer la technologie. Bluevista crée les expériences.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {contentCapabilities.map((cap, idx) => (
-                  <div key={idx} className="space-y-2">
-                    <div className="text-primary">{cap.icon}</div>
-                    <h3 className="font-bold">{cap.title}</h3>
-                    <p className="text-sm text-muted-foreground">{cap.description}</p>
+                  <div key={idx} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary" />
+                    <span className="font-medium">{cap}</span>
                   </div>
                 ))}
               </div>
@@ -441,7 +302,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Realizations - ENRICHED */}
+      {/* Realizations - PORTFOLIO PREMIUM */}
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
@@ -453,7 +314,26 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project, idx) => (
+            {[
+              {
+                name: "MyGinger - Studio de Yoga Immersif",
+                location: "Paris",
+                problem: "Offrir une expérience de yoga différenciante et premium",
+                benefit: "Augmentation de 45% de la satisfaction client",
+              },
+              {
+                name: "Le Cardinal Hotel - Voyages Immersifs",
+                location: "Île-de-France",
+                problem: "Créer une expérience unique pour les clients hôtel",
+                benefit: "Augmentation du tarif moyen de 30%",
+              },
+              {
+                name: "WorldSkills - Spectacle Immersif",
+                location: "Lyon",
+                problem: "Créer un spectacle d'ouverture mémorable",
+                benefit: "Plus de 10 000 spectateurs engagés",
+              },
+            ].map((project, idx) => (
               <Card
                 key={idx}
                 className="bg-card border-border hover:border-primary transition-all overflow-hidden group animate-slide-up"
@@ -462,11 +342,9 @@ export default function Home() {
                 <div className="h-48 bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
                   <span className="text-6xl opacity-20">✨</span>
                 </div>
-                <CardHeader>
-                  <CardTitle>{project.name}</CardTitle>
+                <CardContent className="pt-6 space-y-3">
+                  <h3 className="text-lg font-bold group-hover:text-primary transition-colors">{project.name}</h3>
                   <p className="text-sm text-primary">{project.location}</p>
-                </CardHeader>
-                <CardContent className="space-y-3">
                   <div>
                     <p className="text-xs font-bold text-primary mb-1">Problématique</p>
                     <p className="text-sm text-muted-foreground">{project.problem}</p>
@@ -475,7 +353,6 @@ export default function Home() {
                     <p className="text-xs font-bold text-primary mb-1">Résultat</p>
                     <p className="text-sm text-muted-foreground">{project.benefit}</p>
                   </div>
-                  <p className="text-xs text-muted-foreground italic">{project.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -483,7 +360,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Bluevista - COMPARISON */}
+      {/* Why Bluevista - COMPARISON TABLE */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
@@ -500,26 +377,26 @@ export default function Home() {
                 <tr className="border-b border-border">
                   <th className="text-left py-4 px-4 font-bold">Capacité</th>
                   <th className="text-center py-4 px-4 font-bold">Bluevista</th>
-                  <th className="text-center py-4 px-4 font-bold">Intégrateur Classique</th>
+                  <th className="text-center py-4 px-4 font-bold">Intégrateur</th>
                 </tr>
               </thead>
               <tbody>
-                {comparison.map((item, idx) => (
+                {[
+                  { feature: "Conception de l'expérience", bluevista: true, competitor: false },
+                  { feature: "Production des contenus", bluevista: true, competitor: false },
+                  { feature: "Intégration technique", bluevista: true, competitor: true },
+                  { feature: "Gestion complète du projet", bluevista: true, competitor: false },
+                  { feature: "Accompagnement stratégique", bluevista: true, competitor: false },
+                  { feature: "Vidéos réelles et drone", bluevista: true, competitor: false },
+                  { feature: "Contenus 3D custom", bluevista: true, competitor: false },
+                ].map((item, idx) => (
                   <tr key={idx} className="border-b border-border hover:bg-background/50 transition-colors">
                     <td className="py-4 px-4">{item.feature}</td>
                     <td className="text-center py-4 px-4">
-                      {item.bluevista ? (
-                        <span className="text-primary font-bold">✓</span>
-                      ) : (
-                        <span className="text-muted-foreground">✗</span>
-                      )}
+                      {item.bluevista ? <span className="text-primary font-bold">✓</span> : <span className="text-muted-foreground">✗</span>}
                     </td>
                     <td className="text-center py-4 px-4">
-                      {item.competitor ? (
-                        <span className="text-primary font-bold">✓</span>
-                      ) : (
-                        <span className="text-muted-foreground">✗</span>
-                      )}
+                      {item.competitor ? <span className="text-primary font-bold">✓</span> : <span className="text-muted-foreground">✗</span>}
                     </td>
                   </tr>
                 ))}
@@ -545,19 +422,17 @@ export default function Home() {
                 style={{ animationDelay: `${idx * 50}ms` }}
                 onClick={() => setExpandedFaq(expandedFaq === item.q ? null : item.q)}
               >
-                <CardHeader>
+                <div className="p-6">
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{item.q}</CardTitle>
+                    <h3 className="text-lg font-bold">{item.q}</h3>
                     <span className="text-primary font-bold text-xl">
                       {expandedFaq === item.q ? "−" : "+"}
                     </span>
                   </div>
-                </CardHeader>
-                {expandedFaq === item.q && (
-                  <CardContent>
-                    <p className="text-muted-foreground">{item.a}</p>
-                  </CardContent>
-                )}
+                  {expandedFaq === item.q && (
+                    <p className="text-muted-foreground mt-4">{item.a}</p>
+                  )}
+                </div>
               </Card>
             ))}
           </div>
