@@ -6,8 +6,9 @@ import Navigation from "@/components/Navigation";
 
 /**
  * DESIGN PHILOSOPHY: Premium Immersive Experience
- * Emotion > Explanation
- * "Je veux vivre ça" au lieu de "Je comprends comment ça fonctionne"
+ * Vocabulaire: Expérience immersive sur mesure, pas "salle immersive"
+ * Message: Bluevista conçoit, produit et déploie des expériences complètes
+ * Émotion > Explication
  */
 
 export default function Home() {
@@ -131,22 +132,22 @@ export default function Home() {
       <section className="hero-section pt-16 mt-16">
         <img
           src="https://d2xsxph8kpxj0f.cloudfront.net/310519663405351247/hp8bdYEEvBiSkxBwHM89uf/hero-immersive-landscape-mRNbgdRjabNQ6GXWYo9RFd.webp"
-          alt="Expérience immersive"
+          alt="Expérience immersive premium"
           className="hero-image"
         />
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="text-center space-y-6 animate-fade-in">
             <h1 className="text-5xl md:text-6xl font-bold text-white drop-shadow-lg leading-tight">
-              Transformez n'importe quel espace en expérience immersive mémorable
+              Concevez, produisez et déployez des expériences immersives complètes
             </h1>
             <p className="text-xl md:text-2xl text-gray-100 max-w-3xl mx-auto drop-shadow-md">
-              Nous concevons des expériences immersives sur mesure qui captivent les visiteurs, renforcent l'engagement et créent des souvenirs durables.
+              Un seul partenaire pour imaginer, créer et installer vos environnements immersifs. Audiovisuel, créatif, vidéo, événementiel, 3D : toutes les expertises réunies.
             </p>
             <div className="flex gap-4 justify-center pt-4 flex-wrap">
               <Button size="lg" className="bg-primary text-background hover:bg-primary/90 glow">
                 <a href="/booking" className="flex items-center gap-2 no-underline">
-                  Demander une étude de projet
+                  Discuter de votre projet
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
@@ -156,7 +157,7 @@ export default function Home() {
                 className="border-white text-white hover:bg-white/10"
               >
                 <a href="/gallery" className="flex items-center gap-2 no-underline">
-                  Découvrir nos réalisations
+                  Voir nos réalisations
                   <ArrowRight className="w-4 h-4" />
                 </a>
               </Button>
@@ -169,7 +170,7 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Pourquoi l'immersion fonctionne</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">Pourquoi les expériences immersives fonctionnent</h2>
             <div className="w-20 h-1 bg-primary mx-auto" />
           </div>
 
@@ -309,7 +310,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Nos réalisations</h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6" />
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Des projets qui ont transformé les espaces et créé des expériences inoubliables.
+              Des expériences immersives qui ont transformé les espaces et créé des moments inoubliables.
             </p>
           </div>
 
@@ -360,48 +361,62 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Bluevista - COMPARISON TABLE */}
+      {/* Why Bluevista - COMPARISON TABLE PREMIUM */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Pourquoi Bluevista</h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6" />
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Nous ne sommes pas un intégrateur. Nous sommes une agence d'expérience immersive complète.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-semibold">
+              Habituellement, un projet immersif nécessite plusieurs prestataires : intégrateur audiovisuel, studio créatif, producteur vidéo, agence événementielle, studio 3D.
+            </p>
+            <p className="text-lg text-primary max-w-3xl mx-auto mt-4 font-bold">
+              Bluevista rassemble toutes ces expertises dans une seule équipe.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto overflow-x-auto">
-            <table className="w-full">
+          <div className="max-w-6xl mx-auto overflow-x-auto">
+            <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-border">
-                  <th className="text-left py-4 px-4 font-bold">Capacité</th>
-                  <th className="text-center py-4 px-4 font-bold">Bluevista</th>
-                  <th className="text-center py-4 px-4 font-bold">Intégrateur</th>
+                  <th className="text-left py-4 px-3 font-bold">Capacités</th>
+                  <th className="text-center py-4 px-3 font-bold">Intégrateur</th>
+                  <th className="text-center py-4 px-3 font-bold">Studio Créatif</th>
+                  <th className="text-center py-4 px-3 font-bold">Producteur Vidéo</th>
+                  <th className="text-center py-4 px-3 font-bold">Agence Event</th>
+                  <th className="text-center py-4 px-3 font-bold text-primary font-bold">Bluevista</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { feature: "Conception de l'expérience", bluevista: true, competitor: false },
-                  { feature: "Production des contenus", bluevista: true, competitor: false },
-                  { feature: "Intégration technique", bluevista: true, competitor: true },
-                  { feature: "Gestion complète du projet", bluevista: true, competitor: false },
-                  { feature: "Accompagnement stratégique", bluevista: true, competitor: false },
-                  { feature: "Vidéos réelles et drone", bluevista: true, competitor: false },
-                  { feature: "Contenus 3D custom", bluevista: true, competitor: false },
+                  { feature: "Conception de l'expérience", int: false, creative: true, video: false, event: true, blue: true },
+                  { feature: "Storytelling", int: false, creative: true, video: true, event: true, blue: true },
+                  { feature: "Production vidéo", int: false, creative: false, video: true, event: false, blue: true },
+                  { feature: "Création 3D", int: false, creative: true, video: false, event: false, blue: true },
+                  { feature: "Interactivité", int: true, creative: false, video: false, event: false, blue: true },
+                  { feature: "Installation technique", int: true, creative: false, video: false, event: false, blue: true },
+                  { feature: "Gestion complète du projet", int: false, creative: false, video: false, event: true, blue: true },
+                  { feature: "Accompagnement stratégique", int: false, creative: false, video: false, event: false, blue: true },
+                  { feature: "Contenu immersif clé en main", int: false, creative: false, video: false, event: false, blue: true },
+                  { feature: "Déploiement complet", int: true, creative: false, video: false, event: false, blue: true },
                 ].map((item, idx) => (
                   <tr key={idx} className="border-b border-border hover:bg-background/50 transition-colors">
-                    <td className="py-4 px-4">{item.feature}</td>
-                    <td className="text-center py-4 px-4">
-                      {item.bluevista ? <span className="text-primary font-bold">✓</span> : <span className="text-muted-foreground">✗</span>}
-                    </td>
-                    <td className="text-center py-4 px-4">
-                      {item.competitor ? <span className="text-primary font-bold">✓</span> : <span className="text-muted-foreground">✗</span>}
-                    </td>
+                    <td className="py-3 px-3 font-medium">{item.feature}</td>
+                    <td className="text-center py-3 px-3">{item.int ? <span className="text-primary">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                    <td className="text-center py-3 px-3">{item.creative ? <span className="text-primary">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                    <td className="text-center py-3 px-3">{item.video ? <span className="text-primary">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                    <td className="text-center py-3 px-3">{item.event ? <span className="text-primary">✓</span> : <span className="text-muted-foreground">—</span>}</td>
+                    <td className="text-center py-3 px-3 bg-primary/10 font-bold">{item.blue ? <span className="text-primary">✓</span> : <span className="text-muted-foreground">—</span>}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          
+          <div className="text-center mt-12 animate-slide-up">
+            <p className="text-xl font-bold text-primary max-w-3xl mx-auto">
+              Un seul partenaire pour imaginer, produire et déployer l'expérience complète.
+            </p>
           </div>
         </div>
       </section>
@@ -442,14 +457,14 @@ export default function Home() {
       {/* Final CTA */}
       <section className="py-24 bg-card border-t border-border">
         <div className="container text-center animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Parlons de votre projet immersif</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Imaginez votre expérience immersive</h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            Discutons ensemble de la meilleure façon de transformer votre espace en expérience mémorable.
+            Vous avez une vision ? Nous avons l'expertise pour la concrétiser. Discutons de votre projet et explorez ensemble les possibilités.
           </p>
           <Button size="lg" className="bg-primary text-background hover:bg-primary/90">
             <a href="/booking" className="flex items-center gap-2 no-underline">
-              Demander une étude de projet
+              Discuter de votre projet
               <ArrowRight className="w-4 h-4" />
             </a>
           </Button>
